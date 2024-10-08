@@ -17,7 +17,9 @@
             label: 'Password'
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
-
+        {% for error in registrationForm.plainPassword.vars.errors %}
+        <div class="error">{{ error.message }}</div>
+    {% endfor %}
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
